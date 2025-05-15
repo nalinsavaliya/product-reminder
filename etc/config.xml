@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!--
+ /**
+ * ElRyan_ProductReminder extension
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the GNU General Public License 3 License
+ * that is bundled with this package in the file LICENSE
+ * It is also available through the world-wide-web at this URL:
+ * https://www.gnu.org/licenses/gpl-3.0.de.html
+ *
+ * @category  ElRyan
+ * @package   ElRyan_ProductReminder
+ * @copyright Copyright © ElRyan. All rights reserved.
+ * @license   https://www.gnu.org/licenses/gpl-3.0.html GNU General Public License 3 License
+ * @author    mailto:info@elryan.com
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Config/etc/system_file.xsd">
+    <default>
+        <product_reminder>
+            <general>
+                <enabled>1</enabled>
+                <email_identity>general</email_identity>
+                <message>This is a friendly reminder about the product you showed interest in—feel free to revisit it at your convenience.
+                </message>
+            </general>
+        </product_reminder>
+    </default>
+</config>

@@ -1,0 +1,24 @@
+<!--@subject {{trans "%subject" subject=$subject}} @-->
+<!--@vars {
+"var customer_name":"Customer Full Name",
+"var reminder_message":"Reminder Message",
+"var subject":"Email Subject"
+} @-->
+{{template config_path="design/email/header_template"}}
+
+<div class="email-container">
+    <div class="email-body">
+        <h2>Hello {{var customer_name}},</h2>
+
+        <p>{{var reminder_message}}</p>
+
+        <p>If you have any questions or need further assistance, please don't hesitate to contact us.</p>
+
+        <p>Best regards,</p>
+        <p>The ElRyan Team</p>
+    </div>
+
+</div>
+
+{{template config_path="design/email/footer_template"}}
+

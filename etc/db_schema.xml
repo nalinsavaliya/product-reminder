@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!--
+ /**
+ * ElRyan_ProductReminder extension
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the GNU General Public License 3 License
+ * that is bundled with this package in the file LICENSE
+ * It is also available through the world-wide-web at this URL:
+ * https://www.gnu.org/licenses/gpl-3.0.de.html
+ *
+ * @category  ElRyan
+ * @package   ElRyan_ProductReminder
+ * @copyright Copyright © ElRyan. All rights reserved.
+ * @license   https://www.gnu.org/licenses/gpl-3.0.html GNU General Public License 3 License
+ * @author    mailto:info@elryan.com
+ */
+ -->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="product_reminder" resource="default" engine="innodb" comment="Product Reminder">
+        <column xsi:type="int" name="id" unsigned="true" nullable="false" identity="true"
+                comment="Entity ID"/>
+        <column xsi:type="int" name="customer_id" unsigned="true" nullable="false" identity="false"
+                comment="Customer ID"/>
+        <column xsi:type="int" name="product_id" unsigned="true" nullable="false" identity="false"
+                comment="Product ID"/>
+        <column xsi:type="date" name="reminder_date" nullable="false" comment="Block Creation Time"/>
+        <column xsi:type="varchar" name="status" nullable="false" length="25" default="pending" comment="Status"/>
+
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id"/>
+        </constraint>
+        <constraint xsi:type="foreign" referenceId="PRODUCT_REMINDER_CUSTOMER_ID_CUSTOMER_ENTITY_ENTITY_ID"
+                    table="product_reminder" column="customer_id" referenceTable="customer_entity"
+                    referenceColumn="entity_id"
+                    onDelete="CASCADE"/>
+        <constraint xsi:type="foreign" referenceId="PRODUCT_REMINDER_PRODUCT_ID_CATALOG_PRODUCT_ENTITY_ENTITY_ID"
+                    table="product_reminder" column="product_id" referenceTable="catalog_product_entity"
+                    referenceColumn="entity_id"
+                    onDelete="CASCADE"/>
+    </table>
+</schema>
